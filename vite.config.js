@@ -1,4 +1,8 @@
 // vite.config.js
-export default {
-  base: './', // use relative path for static hosting
-};
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react'; // or vue, svelte, etc.
+
+export default defineConfig({
+  plugins: [react()],
+  base: './', // 👈 relative path
+});
