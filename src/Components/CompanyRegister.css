@@ -1,0 +1,330 @@
+/* Color Variables */
+:root {
+  --primary-dark-teal: #122C34;
+  --primary-green: #4FB477;
+  --primary-blue: #2A4494;
+  --background-cream: #cdc5b4f2;
+  --text-gray: #6B7280;
+  --white: #ffffff;
+}
+
+.register-company-container {
+  min-height: 100vh;
+  padding: 40px;
+  background: var(--background-cream);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.register-company-form {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(18, 44, 52, 0.1), 0 10px 10px -5px rgba(18, 44, 52, 0.04);
+  border: 1px solid rgba(18, 44, 52, 0.08);
+  width: calc(100% - 80px);
+  max-width: 800px;
+  max-height: calc(100vh - 80px);
+  margin: 0 auto;
+  position: relative;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.register-company-form::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary-blue), var(--primary-green), var(--primary-blue));
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0.05;
+}
+
+.register-company-form h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--primary-dark-teal);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  position: relative;
+}
+
+.register-company-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+  border-radius: 2px;
+}
+
+.form-subtitle {
+  color: var(--text-gray);
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-group {
+  margin-bottom: 25px;
+  position: relative;
+  padding-left: 8px;
+  border-left: 3px solid var(--primary-green);
+  padding-bottom: 8px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  color: var(--primary-blue);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid rgba(107, 114, 128, 0.2);
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: var(--white);
+  box-sizing: border-box;
+  margin-left: 12px;
+  width: calc(100% - 12px);
+  color: var(--text-gray);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(42, 68, 148, 0.1);
+  transform: translateY(-2px);
+}
+
+.input-group input::placeholder {
+  color: rgba(107, 114, 128, 0.6);
+  font-weight: 400;
+}
+
+.input-group input[type="number"]::-webkit-outer-spin-button,
+.input-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.map-container {
+  margin: 25px 0;
+  margin-left: 20px;
+  width: calc(100% - 20px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(18, 44, 52, 0.1);
+  border: 2px solid rgba(107, 114, 128, 0.2);
+  transition: all 0.3s ease;
+}
+
+.map-container:hover {
+  box-shadow: 0 12px 35px rgba(18, 44, 52, 0.15);
+  transform: translateY(-2px);
+  border-color: var(--primary-green);
+}
+
+.success-message {
+  background: linear-gradient(135deg, var(--primary-green), #45a049);
+  color: var(--white);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  margin-left: 20px;
+  width: calc(100% - 60px);
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(79, 180, 119, 0.3);
+  animation: slideInUp 0.5s ease;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: var(--white);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  margin-left: 20px;
+  width: calc(100% - 60px);
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+  animation: shake 0.5s ease;
+}
+
+.register-btn {
+  width: calc(100% - 20px);
+  margin-left: 20px;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark-teal) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.register-btn:hover::before {
+  left: 100%;
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(42, 68, 148, 0.4);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+}
+
+.register-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(42, 68, 148, 0.3);
+}
+
+.register-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-company-container {
+    padding: 30px;
+  }
+  
+  .register-company-form {
+    padding: 30px 25px;
+    border-radius: 15px;
+    width: calc(100% - 60px);
+  }
+  
+  .register-company-form h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group input {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .register-btn {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-company-container {
+    padding: 20px;
+  }
+  
+  .register-company-form {
+    padding: 25px 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .register-company-form h2 {
+    font-size: 24px;
+  }
+  
+  .input-group input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .map-container {
+    margin-left: 12px;
+    width: calc(100% - 12px);
+  }
+  
+  .success-message,
+  .error-message {
+    margin-left: 12px;
+    width: calc(100% - 44px);
+  }
+  
+  .register-btn {
+    margin-left: 12px;
+    width: calc(100% - 12px);
+  }
+}
+
+/* Loading state for button */
+.register-btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.register-btn.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

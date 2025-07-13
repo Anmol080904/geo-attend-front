@@ -1,0 +1,445 @@
+/* PC-Centric ContactUs.css with Custom Color Palette - Compact Version */
+
+:root {
+  --primary-dark-teal: #122C34;
+  --primary-green: #4FB477;
+  --primary-blue: #2A4494;
+  --background-cream: #cdc5b4f2;
+  --text-gray: #6B7280;
+  --white: #ffffff;
+}
+
+.contact-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  
+  /* Custom gradient background using your palette */
+  background: linear-gradient(135deg, 
+    rgba(205, 197, 180, 0.3) 0%,     /* Light cream */
+    rgba(205, 197, 180, 0.5) 20%,    /* Medium cream */
+    rgba(42, 68, 148, 0.2) 40%,     /* Light blue */
+    rgba(79, 180, 119, 0.2) 60%,    /* Light green */
+    rgba(42, 68, 148, 0.3) 80%,     /* Medium blue */
+    rgba(18, 44, 52, 0.2) 100%      /* Light dark teal */
+  );
+  background-size: 100% 100%;
+  animation: gradientShift 12s ease-in-out infinite;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Geometric pattern overlay */
+.contact-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(42, 68, 148, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(79, 180, 119, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(42, 68, 148, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(79, 180, 119, 0.05) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  animation: patternMove 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes patternMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 60px); }
+}
+
+.contact-container {
+  position: relative;
+  width: 80vw;
+  max-width: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0; /* Remove gap to ensure equal spacing */
+  align-items: stretch; /* Make both sides same height */
+  
+  /* Darker glassmorphism container using custom colors */
+  background: linear-gradient(135deg, 
+    rgba(18, 44, 52, 0.4) 0%, 
+    rgba(42, 68, 148, 0.35) 50%,
+    rgba(18, 44, 52, 0.4) 100%
+  );
+  /* backdrop-filter: blur(20px) saturate(120%); */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  padding: 40px 80px;
+  border-radius: 0;
+  
+  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 32px 64px -12px rgba(18, 44, 52, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Left side - Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2.5rem; /* Increased padding for visual separation */
+  border-right: 1px solid rgba(255, 255, 255, 0.1); /* Add subtle divider */
+}
+
+.contact-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  
+  /* Custom gradient text */
+  background: linear-gradient(135deg, 
+    var(--white) 0%,                 /* White */
+    rgba(205, 197, 180, 1) 25%,      /* Light cream */
+    rgba(205, 197, 180, 0.9) 75%,    /* Medium cream */
+    var(--white) 100%                /* White */
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGradient 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, 
+    rgba(42, 68, 148, 0.15) 0%, 
+    rgba(79, 180, 119, 0.1) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, 
+    rgba(42, 68, 148, 0.2) 0%, 
+    rgba(79, 180, 119, 0.15) 100%
+  );
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.contact-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Right side - Contact Form */
+.contact-container {
+  position: relative;
+  width: 85vw;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* ensures equal height */
+  justify-content: space-between;
+
+  background: linear-gradient(135deg, 
+    rgba(18, 44, 52, 0.4) 0%, 
+    rgba(42, 68, 148, 0.35) 50%,
+    rgba(18, 44, 52, 0.4) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  padding: 40px 80px;
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 50%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(205, 197, 180, 1);  /* Cream color for visibility */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 500px;
+  padding: .875rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.95);  /* Nearly white background */
+  backdrop-filter: blur(10px);
+  color: var(--primary-dark-teal);  /* Dark teal text for contrast */
+  outline: none;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-gray);  /* Gray for placeholders */
+  font-weight: 400;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-green);
+  background: rgba(255, 255, 255, 1);  /* Pure white on focus */
+  box-shadow: 
+    0 0 0 4px rgba(79, 180, 119, 0.2),
+    0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-button {
+  margin-top: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  
+  background: linear-gradient(135deg, 
+    var(--primary-blue) 0%, 
+    var(--primary-green) 100%
+  );
+  color: white;
+  
+  position: relative;
+  overflow: hidden;
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  box-shadow: 
+    0 10px 25px rgba(79, 180, 119, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 15px 35px rgba(79, 180, 119, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.contact-button:hover::before {
+  left: 100%;
+}
+
+.contact-button:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Responsive Design - Tablet and Mobile */
+@media (max-width: 1024px) {
+  .contact-container {
+    margin: 40px 20px;
+    max-width: 900px;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 40px 60px;
+  }
+  
+  .contact-info {
+    padding-right: 0;
+    text-align: center;
+    order: 2;
+  }
+  
+  .contact-form-container {
+    order: 1;
+    padding-left: 0;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 0;
+  }
+  
+  .contact-container {
+    margin: 20px 16px;
+    padding: 32px 24px;
+    gap: 1.5rem;
+    border-radius: 24px;
+  }
+  
+  .contact-title {
+    font-size: 2.25rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-details {
+    display: none; /* Hide detailed contact info on mobile for cleaner look */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem 0.875rem;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .contact-container {
+    background: linear-gradient(135deg, 
+      rgba(18, 44, 52, 0.5) 0%, 
+      rgba(42, 68, 148, 0.4) 50%,
+      rgba(18, 44, 52, 0.5) 100%
+    );
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .contact-page,
+  .contact-page::before,
+  .contact-title,
+  .contact-button::before {
+    animation: none;
+  }
+  
+  .contact-container:hover,
+  .contact-form input:focus,
+  .contact-form textarea:focus,
+  .contact-button:hover,
+  .contact-item:hover {
+    transform: none;
+  }
+}
