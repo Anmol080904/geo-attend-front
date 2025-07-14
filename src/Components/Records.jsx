@@ -12,7 +12,7 @@ export default function AttendanceSummary() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://127.0.0.1:8000/attendance-records/', {
+      const response = await fetch('https://geo-attend-backend.onrender.com/attendance-records/', {
         method: 'POST', // Correct HTTP method
         headers: {
           'Content-Type': 'application/json',

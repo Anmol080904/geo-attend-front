@@ -9,7 +9,7 @@ const ViewInfo = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch('http://localhost:8000/employee/', {
+        const res = await fetch('https://geo-attend-backend.onrender.com/employee/', {
           credentials: 'include',
         });
         const data = await res.json();

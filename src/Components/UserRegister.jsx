@@ -16,7 +16,7 @@ const UserRegister = () => {
     e.preventDefault();
     setMessage("Registering...");
 
-    const response = await fetch("http://localhost:8000/api/register_user/", {
+    const response = await fetch("https://geo-attend-backend.onrender.com/api/register_user/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

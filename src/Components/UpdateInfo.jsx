@@ -18,7 +18,7 @@ const UpdateInfo = () => {
     // Prefill form with existing data (optional, based on your API)
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/get-employee/${employeeId}/`);
+        const res = await fetch(`https://geo-attend-backend.onrender.com/get-employee/${employeeId}/`);
         const data = await res.json();
         setFormData({
           first_name: data.first_name,

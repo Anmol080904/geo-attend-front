@@ -49,7 +49,7 @@ export default function LeaveApplication() {
 
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
-      const response = await fetch('http://127.0.0.1:8000/leave-apply/', {
+      const response = await fetch('https://geo-attend-backend.onrender.com/leave-apply/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

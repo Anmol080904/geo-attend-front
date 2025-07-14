@@ -30,7 +30,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/create-employee/', {
+      const response = await fetch('https://geo-attend-backend.onrender.com/create-employee/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

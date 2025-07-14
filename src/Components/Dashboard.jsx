@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [location, setLocation] = useState({ name: '', lat: null, lng: null });
 
 useEffect(() => {
-  fetch('http://localhost:8000/employee/', {
+  fetch('https://geo-attend-backend.onrender.com/employee/', {
     credentials: 'include',
   })
     .then(res => res.json())

@@ -13,7 +13,7 @@ export default function LeaveDashboard() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('http://localhost:8000/leave-approve/', {
+      const res = await fetch('https://geo-attend-backend.onrender.com/leave-approve/', {
         credentials: 'include',
       });
       const data = await res.json();
@@ -32,7 +32,7 @@ export default function LeaveDashboard() {
 
   const updateLeaveStatus = async (leaveId, newStatus) => {
     try {
-      const res = await fetch('http://localhost:8000/update-leave/', {
+      const res = await fetch('https://geo-attend-backend.onrender.com/update-leave/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

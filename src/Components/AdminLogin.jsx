@@ -18,7 +18,7 @@ const AdminLogin = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/admin_login/', {
+      const response = await fetch('https://geo-attend-backend.onrender.com/admin_login/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

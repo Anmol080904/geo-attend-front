@@ -44,7 +44,7 @@ const RegisterCompany = () => {
       throw new Error('Radius must be at least 10 meters');
     }
 
-    const response = await fetch('http://localhost:8000/register-company/', {
+    const response = await fetch('https://geo-attend-backend.onrender.com/register-company/', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
