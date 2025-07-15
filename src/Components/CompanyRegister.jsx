@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import './CompanyRegister.css';
-import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+
 import { useNavigate } from 'react-router-dom';
 const containerStyle = {
   width: '100%',
@@ -121,7 +121,7 @@ const RegisterCompany = () => {
           />
         </div>
 
-        <div className="map-container">
+        {/* <div className="map-container">
           <LoadScript googleMapsApiKey="AIzaSyB_A8TdlCYo1Wub3tG5XE-D-OJSmOt3T_M">
             <GoogleMap
               mapContainerStyle={containerStyle}
@@ -132,7 +132,7 @@ const RegisterCompany = () => {
               <Marker position={location} />
             </GoogleMap>
           </LoadScript>
-        </div>
+        </div> */}
 
         {message && (
           <p className={message.startsWith('✅') ? 'success-message' : 'error-message'}>
