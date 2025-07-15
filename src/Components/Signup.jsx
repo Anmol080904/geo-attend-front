@@ -46,9 +46,10 @@ const Signup = () => {
         }),
       });
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Registration failed');
-      }
+  const errorData = await response.json();
+  const errorMsg = errorData.detail || Object.values(errorData)[0]?.[0] || 'Registration failed';
+  throw new Error(errorMsg);
+}
 
       alert("Signup successful!");
       navigate('/login'); 
