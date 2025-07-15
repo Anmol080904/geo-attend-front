@@ -16,22 +16,29 @@ useEffect(() => {
   })
     .then(res => res.json())
     .then(data => {
-      if (data.status === 'success') {
+      if (data.status === 'success' && data.employee && data.employee.company) {
         const company = data.employee.company;
         setLocation({
           name: company.name,
           lat: company.latitude,
           lng: company.longitude
         });
+      } else {
+        console.error("Invalid data received:", data);
+        navigate('/login');
       }
     })
-    .catch(err => console.error('Error fetching location:', err));
+    .catch(err => {
+      console.error('Error fetching location:', err);
+      navigate('/login');  // optional fallback
+    });
 }, []);
+
 
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:8000/logout/', { method: 'POST', credentials: 'include' });
+      await fetch('https://geo-attend-backend.onrender.com/logout/', { method: 'POST', credentials: 'include' });
       navigate('/login');
     } catch (error) {
       console.error('Logout error:', error);
