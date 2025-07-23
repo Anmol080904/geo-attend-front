@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './Records.css'; // Optional if you're using custom CSS
 
@@ -13,7 +12,7 @@ export default function AttendanceSummary() {
     setError(null);
     try {
       const response = await fetch('https://geo-attend-backend.onrender.com/attendance-records/', {
-        method: 'POST', // Correct HTTP method
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -35,11 +34,15 @@ export default function AttendanceSummary() {
     }
   };
 
+  const downloadCSV = () => {
+    window.open('https://geo-attend-backend.onrender.com/export-attendance/', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-           Attendance Records
+          Attendance Records
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
@@ -56,15 +59,17 @@ export default function AttendanceSummary() {
           >
             Fetch Records
           </button>
+          <button
+            onClick={downloadCSV}
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-md shadow"
+          >
+            Download CSV
+          </button>
         </div>
 
-        {loading && (
-          <p className="text-center text-gray-600 font-medium">Loading records...</p>
-        )}
+        {loading && <p className="text-center text-gray-600 font-medium">Loading records...</p>}
 
-        {error && (
-          <p className="text-center text-red-500 font-semibold">{error}</p>
-        )}
+        {error && <p className="text-center text-red-500 font-semibold">{error}</p>}
 
         {!loading && !error && records.length === 0 && (
           <p className="text-center text-gray-500">No records found.</p>
